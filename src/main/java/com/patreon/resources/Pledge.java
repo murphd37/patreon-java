@@ -49,16 +49,16 @@ public class Pledge extends BaseResource {
     }
   }
 
-  private int amountCents;
-  private String createdAt;
-  private String declinedSince;
-  private boolean patronPaysFees;
-  private int pledgeCapCents;
+  private int amount_cents;
+  private String created_at;
+  private String declined_since;
+  private boolean patron_pays_fees;
+  private int pledge_cap_cents;
 
   //Optional properties.  Will be null if not requested
-  private Integer totalHistoricalAmountCents;
-  private Boolean isPaused;
-  private Boolean hasShippingAddress;
+  private Integer total_historical_amount_cents;
+  private Boolean is_paused;
+  private Boolean has_shipping_address;
 
   @Relationship("creator")
   private User creator;
@@ -82,37 +82,37 @@ public class Pledge extends BaseResource {
                  @JsonProperty("patron") User patron,
                  @JsonProperty("reward") Reward reward
   ) {
-    this.amountCents = amount_cents;
-    this.createdAt = created_at;
-    this.declinedSince = declined_since;
-    this.patronPaysFees = patron_pays_fees;
-    this.pledgeCapCents = pledge_cap_cents;
-    this.totalHistoricalAmountCents = total_historical_amount_cents;
-    this.isPaused = is_paused;
-    this.hasShippingAddress = has_shipping_address;
+    this.amount_cents = amount_cents;
+    this.created_at = created_at;
+    this.declined_since = declined_since;
+    this.patron_pays_fees = patron_pays_fees;
+    this.pledge_cap_cents = pledge_cap_cents;
+    this.total_historical_amount_cents = total_historical_amount_cents;
+    this.is_paused = is_paused;
+    this.has_shipping_address = has_shipping_address;
     this.creator = creator;
     this.patron = patron;
     this.reward = reward;
   }
 
   public int getAmountCents() {
-    return amountCents;
+    return amount_cents;
   }
 
   public String getCreatedAt() {
-    return createdAt;
+    return created_at;
   }
 
   public String getDeclinedSince() {
-    return declinedSince;
+    return declined_since;
   }
 
   public boolean getPatronPaysFees() {
-    return patronPaysFees;
+    return patron_pays_fees;
   }
 
   public int getPledgeCapCents() {
-    return pledgeCapCents;
+    return pledge_cap_cents;
   }
 
   /**
@@ -120,21 +120,21 @@ public class Pledge extends BaseResource {
    * if this field was not requested
    */
   public Integer getTotalHistoricalAmountCents() {
-    return totalHistoricalAmountCents;
+    return total_historical_amount_cents;
   }
 
   /**
    * @return Whether the pledge is paused, or null if this field wasn't requested.
    */
   public Boolean getPaused() {
-    return isPaused;
+    return is_paused;
   }
 
   /**
    * @return Whether this patron has a shipping address, or null if this field wasn't requested
    */
   public Boolean getHasShippingAddress() {
-    return hasShippingAddress;
+    return has_shipping_address;
   }
 
   public User getCreator() {
